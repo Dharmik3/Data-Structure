@@ -72,6 +72,7 @@ void Delete()
     }
 }
 
+
 void Display()
 {   int i=front;
     if(rear==-1&& front==-1)
