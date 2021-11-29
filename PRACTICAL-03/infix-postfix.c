@@ -1,6 +1,6 @@
 //INFIX TO POSTFIX USING STACK
 #include<stdio.h>
-#include<conio.h>
+// #include<conio.h>
 #include<stdlib.h>
 #include<ctype.h>
 #include<string.h>
@@ -35,7 +35,7 @@ void Push(char x)
     if(isFull())
     {
         printf("Stack is full..!");
-        getch();
+        // getc();
     }
     else{
         tos++;
@@ -43,7 +43,7 @@ void Push(char x)
     }
 }
 
-int Pop()
+char Pop()
 {
     if(isEmpty())
     {
@@ -92,19 +92,19 @@ void infixToPostfix(char infix[],char postfix[])
 
         if(item=='('){
             Push(item);
-            printf("\n ( push \n");
+            // printf("\n ( push \n");
         }
         else if(isdigit(item)||isalpha(item))
         {
             postfix[j]=item;
             j++;
-            printf("\n alpha numerical push\n");
+            // printf("\n alpha numerical push\n");
         }
         else if(isOperator(item))
         {
             x=Pop();
-            printf("\n operator  \n");
-            while(isOperator(x)==1&&precedence(x)>precedence(item))
+            // printf("\n operator  \n");
+            while(isOperator(x)==1&&precedence(x)>=precedence(item))
             {
                 postfix[j]=x;
                 j++;
@@ -116,7 +116,7 @@ void infixToPostfix(char infix[],char postfix[])
         else if(item==')')
         {
             x=Pop();
-            printf("\n ) encounter \n");
+            // printf("\n ) encounter \n");
             while(x!='(')
             {
                 postfix[j]=x;
@@ -128,8 +128,7 @@ void infixToPostfix(char infix[],char postfix[])
         else
         {
             printf("Invalid");
-        getch();
-        exit(1);
+            exit(1);
         }
         i++;
         item=infix[i];

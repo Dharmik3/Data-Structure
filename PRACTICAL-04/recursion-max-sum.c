@@ -1,11 +1,11 @@
 #include<stdio.h>
 #include<conio.h>
 #define n 5
-void main()
+int main()
 {
 
     int arr[n],i;
-    printf("Enter 10 numbers :");
+    printf("Enter 5 numbers :");
     for(i=0;i<n;i++)
     {
         scanf("%d",&arr[i]);

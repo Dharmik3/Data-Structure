@@ -1,7 +1,8 @@
 //POSTFIX  EXPRESSION
 #include<stdio.h>
-#include<conio.h>
+// #include<conio.h>
 #include<stdlib.h>
+#include<ctype.h>
 #include<math.h>
 #define n 100
 
@@ -33,7 +34,7 @@ void Push(int x)
     if(isFull())
     {
         printf("Stack is full..!");
-        getch();
+        // getch();
     }
     else{
         tos++;
@@ -105,7 +106,7 @@ void postfixEvaluation(char postfix[])
 }
 
 
-void main()
+int main()
 {
     char postfix[n];
     int i;

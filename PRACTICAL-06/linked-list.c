@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<conio.h>
+// #include<conio.h>
 #include<stdlib.h>
 
 void insert_first();
@@ -11,7 +11,8 @@ void delete_last();
 void delete_elm();
 int countNodes();
 void reverse();
-struct node * concatenate(struct node *,struct node *);
+void create_list();
+struct node *concatenate(struct node *, struct node *);
 struct node
 {
     int info;
@@ -20,7 +21,7 @@ struct node
 struct node * create_node(int elm);
 struct node *first=NULL,*current=NULL;
 struct node *first1=NULL,*current1=NULL;
-void main()
+int main()
 {
 
     insert_first();

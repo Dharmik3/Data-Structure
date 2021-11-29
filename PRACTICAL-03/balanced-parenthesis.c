@@ -53,7 +53,7 @@ char Pop()
     }
 }
 
-void main()
+int  main()
 {
     char item,x;
     int i=0;

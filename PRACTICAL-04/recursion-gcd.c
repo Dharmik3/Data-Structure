@@ -1,7 +1,7 @@
 #include<stdio.h>
-#include<conio.h>
-
-void main()
+// #include<conio.h>
+int gcd(int a, int b);
+int main()
 {
     int a,b;
     printf("Enter two num for finding G.C.D:");

@@ -208,11 +208,8 @@ int main()
     insert_at_pos(1);
     insert_at_pos(3);
     insert_at_pos(2);
-    insert_at_pos(1);
-    insert_at_pos(6);
-    delete_at_pos(1);
     delete_at_pos(2);
-    delete_at_pos(4);
+    delete_at_pos(1);
     display();
     return 0;
 }

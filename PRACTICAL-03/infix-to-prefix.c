@@ -1,6 +1,6 @@
 //INFIX TO PREFIX USING STACK
 #include<stdio.h>
-#include<conio.h>
+// #include<conio.h>
 #include<stdlib.h>
 #include<ctype.h>
 #include<string.h>
@@ -43,7 +43,7 @@ void Push(char x)
     }
 }
 
-int Pop()
+char Pop()
 {
     if(isEmpty())
     {
@@ -74,7 +74,7 @@ int precedence(char sym)
 }
 
 
-void infixToPostfix(char infix[],char postfix[])
+void infixToPrefix(char infix[],char prefix[])
 {
 
     int i,j;
@@ -95,15 +95,15 @@ void infixToPostfix(char infix[],char postfix[])
         }
         else if(isdigit(item)||isalpha(item))
         {
-            postfix[j]=item;
+            prefix[j]=item;
             j++;
         }
         else if(isOperator(item))
         {
             x=Pop();
-            while(isOperator(x)==1&&precedence(x)>precedence(item))
+            while(isOperator(x)==1&&precedence(x)>=precedence(item))
             {
-                postfix[j]=x;
+                prefix[j]=x;
                 j++;
                 x=Pop();
             }
@@ -115,7 +115,7 @@ void infixToPostfix(char infix[],char postfix[])
             x=Pop();
             while(x!=')')
             {
-                postfix[j]=x;
+                prefix[j]=x;
                 j++;
                 x=Pop();
             }
@@ -123,21 +123,20 @@ void infixToPostfix(char infix[],char postfix[])
 
         else
         {
-            printf("Invalid expression!");
-        getch();
+            printf("Invalid expression!");  
         exit(1);
         }
         i++;
         item=infix[i];
     }
-    postfix[j]='\0';
+    prefix[j]='\0';
 }
 int main()
 {
-    char infix[n],postfix[n];
+    char infix[n],prefix[n];
     printf("Enter infix expression :");
     gets(infix);
-    infixToPostfix(infix,postfix);
+    infixToPrefix(infix,prefix);
     printf("\n Prefix expression :");
-    puts(postfix);
+    puts(prefix);
 }
